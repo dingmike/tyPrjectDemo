@@ -1,0 +1,18 @@
+{
+  "wechatConfig": {
+    "appId": "appId",
+    "store": "FileStore_/Users/baisheng/Workspace/mpcast-server/packages/dev-server/wechat-info.json"
+  },
+  "globalToken": {
+    "count": 0
+  },
+  "urls": {},
+  "oauth": {},
+  "card": {},
+  "mp": {
+    "oMFrD5PyOzXajhasUje_f81lSg8Q": {
+      "session_key": "nOJsxgm+PKroLL4rFxy2kw==",
+      "openid": "oMFrD5PyOzXajhasUje_f81lSg8Q"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "mpcast",
+  "version": "0.1.0-alpha.1",
+  "private": true,
+  "scripts": {
+    "core:watch": "concurrently -n tsc,gulp,common \"cd packages/core && yarn tsc:watch\" \"cd packages/core && yarn gulp:watch\" \"cd packages/common && yarn watch\"",
+    "bootstrap": "lerna bootstrap",
+    "docs:watch": "concurrently -n docgen,hugo,webpack -c green,blue,cyan \"cd docs && hugo server\" \"cd docs && yarn webpack -w\"",
+    "docs:build": "cd docs && yarn webpack --prod && node build.js && hugo",
+    "docs:deploy": "cd docs && yarn && cd .. && yarn docs:build",
+    "dev-server:mysql": "cd packages/dev-server && yarn start --db=mysql",
+    "dev-server:postgres": "cd packages/dev-server && yarn start --db=postgres",
+    "dev-server:sqlite": "cd packages/dev-server && yarn start --db=sqlite",
+    "build": "lerna run build",
+    "publish:packages": "yarn build && lerna publish --exact -m \"chore: Publish %s release\" --no-git-tag-version"
+  },
+  "devDependencies": {
+    "@types/graphql": "^14.0.5",
+    "@types/klaw-sync": "^6.0.0",
+    "@types/node": "^10.11.5",
+    "concurrently": "^4.1.0",
+    "graphql": "^14.1.1",
+    "graphql-code-generator": "^0.16.0",
+    "graphql-codegen-add": "^0.16.0",
+    "graphql-codegen-time": "^0.16.0",
+    "graphql-codegen-typescript-client": "^0.16.0",
+    "graphql-codegen-typescript-common": "^0.16.0",
+    "graphql-codegen-typescript-server": "^0.16.0",
+    "graphql-tools": "^4.0.0",
+    "husky": "^0.14.3",
+    "jest": "^24.5.0",
+    "klaw-sync": "^6.0.0",
+    "lerna": "^3.13.1",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.15.2",
+    "ts-jest": "^24.0.0",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.16.0",
+    "typescript": "^3.2.4"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

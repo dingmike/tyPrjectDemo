@@ -1,0 +1,17 @@
+{
+  "name": "dev-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "nodemon --config nodemon-debug.json index.ts"
+  },
+  "dependencies": {
+    "@mpcast/common": "^0.1.2",
+    "typescript": "^3.4.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  }
+}
